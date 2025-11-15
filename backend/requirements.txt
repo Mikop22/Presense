@@ -4,3 +4,4 @@ openai
 requests 
 python-multipart
 google-genai
+pydantic-settings
