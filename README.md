@@ -53,12 +53,17 @@ We are an AI B2B SAAS helping small and medium sized-businesses to reduce HR int
    python3 -m venv venv
    source venv/bin/activate
    ```
-3. Install dependencies:
+3. Set up environment variables:
+   ```bash
+   cp .env.example .env
+   # Edit .env and add your GEMINI_API_KEY from https://aistudio.google.com/app/apikeys
+   ```
+4. Install dependencies:
    ```bash
    pip install -r requirements.txt
    pip install -q -U google-genai
    ```
-4. Run the backend server:
+5. Run the backend server:
    ```bash
    python main.py
    ```
