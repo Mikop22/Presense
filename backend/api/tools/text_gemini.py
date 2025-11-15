@@ -21,7 +21,18 @@ from config import settings
 # 
 # REPLACE WITH YOUR OWN API KEY BY MAKING A .ENV!!!! ---
 
-client = genai.Client(api_key=settings.gemini_api_key)
+# Resolve the Gemini API key from settings or environment and provide a clearer
+# error if it's missing. This helps on deployment platforms (Render) where
+# environment variables are configured in the service settings rather than
+# in a local `.env` file.
+api_key = getattr(settings, 'gemini_api_key', None) or os.getenv('GEMINI_API_KEY')
+if not api_key:
+    raise RuntimeError(
+        "Gemini API key not found. Set the environment variable `GEMINI_API_KEY` "
+        "in your deployment platform (Render) or add `gemini_api_key` to your .env file."
+    )
+
+client = genai.Client(api_key=api_key)
 
 #error handling and retrying
 
