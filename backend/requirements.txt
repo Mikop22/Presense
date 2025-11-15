@@ -5,3 +5,8 @@ requests
 python-multipart
 google-genai
 pydantic-settings
+google-api-core
+google-genai
+tenacity
+pydantic
+python-dotenv
