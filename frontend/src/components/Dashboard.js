@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { formatTime } from '../utils';
 
 // Simple icons as SVG components
 const TrendingUpIcon = () => (
@@ -81,7 +80,6 @@ const VolumeIcon = () => (
 function Dashboard({ onBack, recordingBlob, analysisData }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(75);
-  const [videoDuration, setVideoDuration] = useState(0);
 
   // If no data yet, render nothing (parent keeps showing LoadingScreen)
   if (!analysisData) {
@@ -132,10 +130,6 @@ function Dashboard({ onBack, recordingBlob, analysisData }) {
 
   const handleSliderChange = (setter) => (e) => {
     setter(parseInt(e.target.value));
-  };
-
-  const handleVideoLoadedMetadata = (e) => {
-    setVideoDuration(e.target.duration);
   };
 
   return (
@@ -249,7 +243,6 @@ function Dashboard({ onBack, recordingBlob, analysisData }) {
                     className="w-full h-full rounded-lg object-cover"
                     controls
                     src={URL.createObjectURL(recordingBlob)}
-                    onLoadedMetadata={handleVideoLoadedMetadata}
                   />
                 ) : (
                   <div className="text-center text-white">

@@ -11,8 +11,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { 
   MEDIA_CONSTRAINTS, 
-  MIME_TYPES,
-  API_CONFIG
+  MIME_TYPES
 } from '../constants';
 import { 
   formatTime, 
@@ -235,7 +234,7 @@ function Recorder({ onClose }) {
         cleanup();
       }
     };
-  }, [cleanup, currentView]);
+  }, [cleanup, currentView, loadEyeContactModel]);
 
   // ========== EVENT HANDLERS ==========
 
@@ -338,7 +337,7 @@ function Recorder({ onClose }) {
       clearInterval(timerRef.current);
       timerRef.current = null;
     }
-  }, []);
+  }, [stopEyeContactDetection]);
 
   /**
    * Handles back button navigation
