@@ -78,7 +78,7 @@ function App() {
 
         {/* Dashboard Preview Image */}
         <div 
-          className="relative w-full mt-16 md:mt-16 animate-fade-in-up"
+          className="relative w-full mt-16 animate-fade-in-up"
           style={{ animationDelay: '1.4s' }}
         >
           <img 
