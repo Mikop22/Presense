@@ -57,7 +57,7 @@ function App() {
       </h1>
       
       <div 
-        className="max-w-layout mx-auto px-xl flex flex-col items-center gap-lg w-full h-full mt-[25rem] md:mt-[47rem]"
+        className="max-w-layout mx-auto px-xl flex flex-col items-center gap-lg w-full h-full mt-[16rem] md:mt-[47rem]"
       >
 
         <h2 
