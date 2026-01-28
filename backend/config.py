@@ -5,6 +5,7 @@ load_dotenv('.env')
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="allow")
     gemini_api_key: str
+    openai_api: str  # API key for LemonFox transcription service
     ffmpeg_binary: str = "ffmpeg"
     sample_rate: int = 16000
     audio_channels: int = 1
