@@ -75,17 +75,18 @@ function App() {
           Try Demo
         </button>
 
-        {/* Dashboard Preview Image - bottom 1/3 overflows off screen */}
-        <div 
-          className="w-full mt-xl animate-fade-in-up overflow-hidden"
-          style={{ animationDelay: '1.4s' }}
-        >
-          <img 
-            src="/images/dashboard.png"
-            alt="Speech Analysis Dashboard showing confidence scores, speech composition, video player, and personalized feedback"
-            className="w-[130%] md:w-[150%] max-w-none h-auto object-cover rounded-xl -ml-[15%] md:-ml-[25%] transition-transform duration-700"
-          />
-        </div>
+      </div>
+
+      {/* Dashboard Preview Image - scales with viewport, bottom 1/3 overflows off screen */}
+      <div 
+        className="w-[90vw] mt-xl animate-fade-in-up"
+        style={{ animationDelay: '1.4s' }}
+      >
+        <img 
+          src="/images/dashboard.png"
+          alt="Speech Analysis Dashboard showing confidence scores, speech composition, video player, and personalized feedback"
+          className="w-full h-auto rounded-xl transition-transform duration-700"
+        />
       </div>
     </div>
   );
