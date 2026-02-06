@@ -47,18 +47,17 @@ function App() {
 
   // Main landing page
   return (
-    <div className="min-h-screen bg-page-bg flex items-center py-lg overflow-hidden relative">
-      {/* Hero Section - Absolutely positioned title */}
-      <h1 
-        className="font-manrope text-h1 font-bold text-text-primary text-center absolute inset-x-0 mx-auto max-w-4xl z-10 animate-fade-in-up px-4 top-[15%] md:top-[27%]" 
-        style={{ animationDelay: '0.2s' }}
-      >
-        Judgement free speech feedback with AI.
-      </h1>
-      
+    <div className="min-h-screen bg-page-bg flex flex-col items-center py-lg overflow-hidden">
       <div 
-        className="max-w-layout mx-auto px-xl flex flex-col items-center gap-lg w-full h-full mt-[16rem] md:mt-[47rem]"
+        className="max-w-layout mx-auto px-xl flex flex-col items-center gap-lg w-full mt-[6rem] md:mt-[10rem]"
       >
+        {/* Hero Section */}
+        <h1 
+          className="font-manrope text-h1 font-bold text-text-primary text-center max-w-4xl animate-fade-in-up px-4" 
+          style={{ animationDelay: '0.2s' }}
+        >
+          Judgement free speech feedback with AI.
+        </h1>
 
         <h2 
           className="font-manrope text-h2 font-normal text-text-secondary text-center max-w-2xl animate-fade-in-up"
@@ -76,17 +75,18 @@ function App() {
           Try Demo
         </button>
 
-        {/* Dashboard Preview Image */}
-        <div 
-          className="relative w-full mt-16 animate-fade-in-up"
-          style={{ animationDelay: '1.4s' }}
-        >
-          <img 
-            src="/images/dashboard.png"
-            alt="Speech Analysis Dashboard showing confidence scores, speech composition, video player, and personalized feedback"
-            className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-auto object-cover rounded-xl scale-110 md:scale-125 transition-transform duration-700 hover:scale-130"
-          />
-        </div>
+      </div>
+
+      {/* Dashboard Preview Image - scales with viewport, bottom 1/3 overflows off screen */}
+      <div 
+        className="w-[90vw] mt-xl animate-fade-in-up"
+        style={{ animationDelay: '1.4s' }}
+      >
+        <img 
+          src="/images/dashboard.png"
+          alt="Speech Analysis Dashboard showing confidence scores, speech composition, video player, and personalized feedback"
+          className="w-full h-auto rounded-xl transition-transform duration-700"
+        />
       </div>
     </div>
   );
